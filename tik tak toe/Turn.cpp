@@ -12,8 +12,14 @@ void Turn::update() {
 	case Turn::player2:
 		turn_sprite.setTextureRect(IntRect(48, 0, 48, 16));
 		break;
-	case Turn::end:
+	case Turn::draw:
 		turn_sprite.setTextureRect(IntRect(48*2-1, 0, 48, 16));
+		break;
+	case Turn::player_1_win:
+		turn_sprite.setTextureRect(IntRect(48 * 2 - 1, 0, 48, 16));
+		break;
+	case Turn::player_2_win:
+		turn_sprite.setTextureRect(IntRect(48 * 2 - 1, 0, 48, 16));
 		break;
 	default:
 		break;

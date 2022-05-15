@@ -29,6 +29,7 @@
   <ItemGroup>
     <ClInclude Include="figure.h" />
     <ClInclude Include="check_win.h" />
+    <ClInclude Include="Game_text.h" />
     <ClInclude Include="running_game.h" />
     <ClInclude Include="Turn.h" />
   </ItemGroup>

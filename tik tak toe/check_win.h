@@ -43,8 +43,14 @@ void transponirovanie(figure figures[3][3], Turn& turn) {
 	{
 		if (is_same_number(transpon_figures[i]))
 		{
-
-			turn.game_state = turn.end;
+			if (transpon_figures[i][0].state == figures[i][0].circle)
+			{
+				turn.game_state = turn.player_2_win;
+			}
+			else if (transpon_figures[i][0].state == figures[i][0].cross)
+			{
+				turn.game_state = turn.player_1_win;
+			}
 			break;
 		}
 	}
@@ -68,7 +74,24 @@ void diagonal(figure figures[3][3], Turn& turn) {
 	}
 	if (is_same_number(first_diagonal) or is_same_number(second_diagonal))
 	{
-		turn.game_state = turn.end;
+		if (first_diagonal[0].state == first_diagonal[0].circle)
+		{
+			turn.game_state = turn.player_2_win;
+		}
+		else if (first_diagonal[0].state == first_diagonal[0].cross)
+		{
+			turn.game_state = turn.player_1_win;
+		}
+		if (second_diagonal[0].state == second_diagonal[0].circle)
+		{
+			turn.game_state = turn.player_2_win;
+		}
+
+		else if (second_diagonal[0].state == second_diagonal[0].cross)
+		{
+			turn.game_state = turn.player_1_win;
+		}
+		
 	}
 }
 
@@ -84,8 +107,14 @@ void check_win(Turn& turn, figure figures[3][3]) {
 
 		if (is_same_number(figures[i]))
 		{
-			
-			turn.game_state = turn.end;
+			if (figures[i][0].state==figures[i][0].circle)
+			{
+				turn.game_state = turn.player_2_win;
+			}
+			else if (figures[i][0].state == figures[i][0].cross)
+			{
+				turn.game_state = turn.player_1_win;
+			}
 			break;
 		}
 
@@ -100,7 +129,7 @@ void check_win(Turn& turn, figure figures[3][3]) {
 	}
 	if (count_not_empty_cell==9)
 	{
-		turn.game_state = turn.end;
+		turn.game_state = turn.draw;
 	}
 	
 }

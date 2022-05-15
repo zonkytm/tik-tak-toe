@@ -11,7 +11,9 @@ public:
 	enum State {
 		player1,
 		player2,
-		end
+		draw,
+		player_1_win,
+		player_2_win
 	}game_state;
 
 	Turn()
